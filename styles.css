@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    /* An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place 
+        even if the page is scrolled. The top, right, bottom, and left properties are used to position the element. */
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif; /*Choose your font*/
+}
+
+#view{
+    margin-top: 30px;
+}
+
+#mazeContainer{
+    top: 15px;
+    opacity: 0;
+    display: inline-block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#mazeContainer #mazeCanvas{
+    margin: 0;
+    display: block;
+    border: solid 2px black;
+    height: 400px;
+}
+
+input, select{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    height: 45px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: inline-block; /* Makes align of levels center*/
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    appearance: none; /* removes the arrow in level container */
+}
+
+/* Hover, active and focus are "Pseudo Classes" 
+    1. a:hover MUST come after a:link and a:visited
+    2. a:active MUST come after a:hover in the CSS definition in order to be effective.
+    3. Hover is used when hovering through mouse
+    4. Active is used when it is clicked
+    5. Focus is when taking input through keyBoard
+https://www.w3schools.com/css/css_pseudo_classes.asp*/
+
+input:hover, select:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+
+input:active, select:active{
+    background-color: black;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+
+.custom-select{
+    display: inline-block;
+}
+
+.custom-select select{
+    -webkit-appearance: none;
+    /* The CSS -moz-element Mozilla extension property value was introduced in Gecko 2.0 (Firefox 4.0) as a Mozilla extension value 
+    for the background-image property. 
+    It is used in order to use an arbitrary HTML element as a background image for background and background-image.*/
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: 125px center;
+}
+
+#Message-Container{
+    /* When completed maze, then show,untill then hidden only.*/
+    visibility: hidden;
+    color: white;
+    display: block;
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    /* The z-index property specifies the stack order of an element.
+       An element with greater stack order is always in front of an element with a lower stack order. 
+       Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) 
+       and flex items (elements that are direct children of display:flex elements).*/
+    z-index: 1;
+}
+
+#Message-Container #message{
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+#page{
+    text-align: center;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+#page #menu{
+    margin: auto;
+    padding: 10px;
+    height: 65px;
+    /* The box-sizing property allows us to include the padding and border in an element's total width and height.
+        If you set box-sizing: border-box; on an element, padding and border are included in the width and height*/
+    box-sizing: border-box;
+}
+
+#page #menu h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 3.2rem;
+}
+
+#page #view{
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+}
+
+.border{
+    border: 10px black solid;
+    border-radius: 10px;
+}
+
+#instructions{
+    margin-top: 425px;
+}
+
+/* Extra small devices. (Phone, 600px and down)*/
+@media only screen and (max-width: 400px){
+    input,select{
+        width: 120px;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazes</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div id="page">
+        <div id="Message-Container">
+            <div id="message">
+                <h1>Congratulations!</h1>
+                <p>You have completed the maze.</p>
+                <p id="moves"></p>
+                
+                <!--Come again here, onclick is related to JS-->
+                <input id="okBtn" type="button" onclick="toggleVisability('Message-Container')" value="Cool!" />
+            </div>
+        </div>
+        <br>
+        <div id="menu">
+            <div class="custom-select">
+                <!--Select make a drop down list of available options for you-->
+                <select id="diffSelect">
+                    <!-- value is what is sent to us when form is submitted instead of those options-->
+                    <option value="10">Easy</option>
+                    <option value="15">Medium</option>
+                    <option value="25">Hard</option>
+                    <option value="38">Extreme</option>
+                </select>
+            </div>
+            <input type="button" id="startMazeBtn" onclick="makeMaze()" value="Start" />
+        </div>
+
+        <div id="view">
+            <div id="mazeContainer">
+                <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+            </div>
+        </div>
+        <p id="instructions">Use arrow keys to help reach the man home.</p>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+  
+  <script type="text/javascript" src="script.js" crossorigin="anonymous"></script>
+</body>
+</html>
